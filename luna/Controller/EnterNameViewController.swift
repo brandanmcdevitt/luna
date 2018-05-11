@@ -17,11 +17,13 @@ class EnterNameViewController: UIViewController, UIPickerViewDataSource, UIPicke
     
     let myPicker = UIPickerView()
     var coinArray : [String] = []
-    var sortedArray : [String] = []
     
+    var testDict: [String: String] = [:]
     var pageNo : Int = 0
     
     var baseUrl: String = ""
+    var baseImageUrl: String = "https://www.cryptocompare.com"
+    var finalImageUrl: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +51,8 @@ class EnterNameViewController: UIViewController, UIPickerViewDataSource, UIPicke
             let destinationVC = segue.destination as! CoinViewController
             
             destinationVC.coinPassedFromPrevious = tvCoin.text!
+            destinationVC.imagePassedFromPrevious = finalImageUrl
+            destinationVC.dictionaryPassedFromPrevious = testDict
             
         }
     }
@@ -82,16 +86,18 @@ class EnterNameViewController: UIViewController, UIPickerViewDataSource, UIPicke
     //
     func updateCoins(json : JSON) {
         
-        for (key, value) in json["Data"] {
+        for (_, value) in json["Data"] {
             
-            if let coins = value["CoinInfo"]["Name"].string {
-                print(key, coins)
-                coinArray.append(coins)
-                //sortedArray = coinArray.sorted(by: <)
-            } else {
-                tvCoin.text = "Unavailable"
+            let coins = value["CoinInfo"]["Name"].string
+            let coinImage = value["CoinInfo"]["ImageUrl"].string
+            
+            let loopDict = [coins!: coinImage]
+            
+            for (key, _) in loopDict {
+                coinArray.append(key)
+                testDict[key] = coinImage
             }
-            
+           
         }
     }
     
@@ -108,8 +114,10 @@ class EnterNameViewController: UIViewController, UIPickerViewDataSource, UIPicke
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        tvCoin.text = coinArray[row]
-        //self.view.endEditing(true)
+        let chosenCoin = coinArray[row]
+        
+        tvCoin.text = chosenCoin
+        finalImageUrl = baseImageUrl + testDict[chosenCoin]!
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

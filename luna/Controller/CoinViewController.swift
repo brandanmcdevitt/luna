@@ -11,19 +11,30 @@ import UIKit
 class CoinViewController: UIViewController {
 
     var coinPassedFromPrevious: String?
+    var imagePassedFromPrevious: String?
+    var dictionaryPassedFromPrevious: [String:String] = [:]
     
     @IBOutlet weak var tvCoinName: UILabel!
+    @IBOutlet weak var selectedCoinImage: UIImageView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tvCoinName.text = "Viewing stats for \(coinPassedFromPrevious!)"
+        loadImage()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func loadImage() {
+        if let url = NSURL(string: imagePassedFromPrevious!) {
+            if let data = NSData(contentsOf: url as URL) {
+                selectedCoinImage.image = UIImage(data: data as Data)
+            }
+        }
     }
     
 
