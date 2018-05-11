@@ -20,8 +20,11 @@ class CoinViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     var currencyChoice = "GBP"
     
     var currencyChange : String = ""
+    var rawPrice: Double = 0
     
-    let currency = ["GBP","USD", "EUR"]
+    let currency = ["AUD", "BRL","CAD","CNY","EUR","GBP","HKD","IDR","ILS","INR","JPY","MXN","NOK","NZD","PLN","RON","RUB","SEK","SGD","USD","ZAR"]
+    
+     let currencyWithSymbol = ["AUD" : "$", "BRL" : "R$","CAD" : "$","CNY" : "¥","EUR" : "€","GBP" : "£","HKD" : "$","IDR" : "Rp","ILS" : "₪","INR" : "₹","JPY" : "¥","MXN" : "$","NOK" : "kr","NZD" : "$","PLN" : "zł","RON" : "lei","RUB" : "₽","SEK" : "kr","SGD" : "$","USD" : "$","ZAR" : "R"]
     let currencyPicker = UIPickerView()
     
     @IBOutlet weak var tvCoinName: UILabel!
@@ -32,9 +35,8 @@ class CoinViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     @IBOutlet weak var lbl24High: UILabel!
     @IBOutlet weak var lbl24Low: UILabel!
     @IBOutlet weak var lblMktCap: UILabel!
-    
-    
-    
+    @IBOutlet weak var tvHoldingInput: UITextField!
+    @IBOutlet weak var lblHoldingWorth: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +44,10 @@ class CoinViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         currencyPicker.dataSource = self
         tvCurrency.inputView = currencyPicker
         lblPrice.adjustsFontSizeToFitWidth = true
+        
+        tvHoldingInput.placeholder = coinPassedFromPrevious!
+        lblHoldingWorth.isHidden = true
+        
         priceUrl = "https://min-api.cryptocompare.com/data/pricemultifull?fsyms=\(coinPassedFromPrevious!)&tsyms=\(currencyChoice)"
         
         tvCoinName.text = coinPassedFromPrevious!
@@ -68,6 +74,15 @@ class CoinViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     @IBAction func refreshPressed(_ sender: Any) {
         getPrice(url: currencyChange)
+    }
+    
+    @IBAction func holdingSubmitPressed(_ sender: Any) {
+        let holding: Double = Double(tvHoldingInput.text!)!
+        let holdingBeforeFormat = holding * rawPrice
+        let holdingFormatted = Double(round(100*holdingBeforeFormat)/100)
+        
+        lblHoldingWorth.isHidden = false
+        lblHoldingWorth.text = ("Your \(holding) of \(coinPassedFromPrevious!) is worth \(currencyWithSymbol[currencyChoice]!) \(holdingFormatted)")
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -108,7 +123,7 @@ class CoinViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             .responseJSON { response in
                 if response.result.isSuccess {
                     
-                    print("Sucess!")
+                    print("Connection Successful!")
                     let priceJSON : JSON = JSON(response.result.value!)
                     print(priceJSON)
                     
@@ -116,7 +131,6 @@ class CoinViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
                     
                 } else {
                     print("Error: \(String(describing: response.result.error))")
-                    //self.bitcoinPriceLabel.text = "Connection Issues"
                 }
         }
         
@@ -128,21 +142,13 @@ class CoinViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         let high24 = json["DISPLAY"][coinPassedFromPrevious!][currencyChoice]["HIGH24HOUR"].string
         let low24 = json["DISPLAY"][coinPassedFromPrevious!][currencyChoice]["LOW24HOUR"].string
         let marketCap = json["DISPLAY"][coinPassedFromPrevious!][currencyChoice]["MKTCAP"].string
+        rawPrice = json["RAW"][coinPassedFromPrevious!][currencyChoice]["PRICE"].doubleValue
+
         
         lblPrice.text = currentPrice!
         lbl24High.text = high24!
         lbl24Low.text = low24!
         lblMktCap.text = marketCap!
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
