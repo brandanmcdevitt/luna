@@ -7,21 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29589305EE00C0B3F28AF565 /* Pods_luna.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F60CDF306571B37A1C2A1E9 /* Pods_luna.framework */; };
+		2CBC584F20A4D0AB00C718F6 /* CoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBC584E20A4D0AB00C718F6 /* CoinViewController.swift */; };
 		2CE3A31F20A4988700F246AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE3A31E20A4988700F246AC /* AppDelegate.swift */; };
-		2CE3A32120A4988700F246AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE3A32020A4988700F246AC /* ViewController.swift */; };
+		2CE3A32120A4988700F246AC /* EnterNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE3A32020A4988700F246AC /* EnterNameViewController.swift */; };
 		2CE3A32420A4988700F246AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CE3A32220A4988700F246AC /* Main.storyboard */; };
 		2CE3A32620A4988900F246AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CE3A32520A4988900F246AC /* Assets.xcassets */; };
 		2CE3A32920A4988900F246AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CE3A32720A4988900F246AC /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A50DE71BBCE381C28D5D26C /* Pods-luna.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-luna.debug.xcconfig"; path = "Pods/Target Support Files/Pods-luna/Pods-luna.debug.xcconfig"; sourceTree = "<group>"; };
+		2CBC584E20A4D0AB00C718F6 /* CoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinViewController.swift; sourceTree = "<group>"; };
 		2CE3A31B20A4988700F246AC /* luna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = luna.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CE3A31E20A4988700F246AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2CE3A32020A4988700F246AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2CE3A32020A4988700F246AC /* EnterNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterNameViewController.swift; sourceTree = "<group>"; };
 		2CE3A32320A4988700F246AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2CE3A32520A4988900F246AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CE3A32820A4988900F246AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CE3A32A20A4988900F246AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		323DA455E3CACEA3EFF591D8 /* Pods-luna.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-luna.release.xcconfig"; path = "Pods/Target Support Files/Pods-luna/Pods-luna.release.xcconfig"; sourceTree = "<group>"; };
+		6F60CDF306571B37A1C2A1E9 /* Pods_luna.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_luna.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29589305EE00C0B3F28AF565 /* Pods_luna.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +47,8 @@
 			children = (
 				2CE3A31D20A4988700F246AC /* luna */,
 				2CE3A31C20A4988700F246AC /* Products */,
+				66BC03E661BB11671D3A661B /* Pods */,
+				B23D7216FDA8F6E5DC9B4CC4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +63,48 @@
 		2CE3A31D20A4988700F246AC /* luna */ = {
 			isa = PBXGroup;
 			children = (
-				2CE3A31E20A4988700F246AC /* AppDelegate.swift */,
-				2CE3A32020A4988700F246AC /* ViewController.swift */,
-				2CE3A32220A4988700F246AC /* Main.storyboard */,
+				2CE3A33020A4993000F246AC /* View */,
+				2CE3A33120A4994100F246AC /* Controller */,
 				2CE3A32520A4988900F246AC /* Assets.xcassets */,
 				2CE3A32720A4988900F246AC /* LaunchScreen.storyboard */,
 				2CE3A32A20A4988900F246AC /* Info.plist */,
 			);
 			path = luna;
+			sourceTree = "<group>";
+		};
+		2CE3A33020A4993000F246AC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2CE3A32220A4988700F246AC /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2CE3A33120A4994100F246AC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2CE3A32020A4988700F246AC /* EnterNameViewController.swift */,
+				2CE3A31E20A4988700F246AC /* AppDelegate.swift */,
+				2CBC584E20A4D0AB00C718F6 /* CoinViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		66BC03E661BB11671D3A661B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2A50DE71BBCE381C28D5D26C /* Pods-luna.debug.xcconfig */,
+				323DA455E3CACEA3EFF591D8 /* Pods-luna.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B23D7216FDA8F6E5DC9B4CC4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6F60CDF306571B37A1C2A1E9 /* Pods_luna.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +114,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2CE3A32D20A4988900F246AC /* Build configuration list for PBXNativeTarget "luna" */;
 			buildPhases = (
+				871306EDE8C4C3750825D063 /* [CP] Check Pods Manifest.lock */,
 				2CE3A31720A4988700F246AC /* Sources */,
 				2CE3A31820A4988700F246AC /* Frameworks */,
 				2CE3A31920A4988700F246AC /* Resources */,
+				A8C4781BC4D7EC529A0881DB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,12 +175,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		871306EDE8C4C3750825D063 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-luna-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A8C4781BC4D7EC529A0881DB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-luna/Pods-luna-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-luna/Pods-luna-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2CE3A31720A4988700F246AC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CE3A32120A4988700F246AC /* ViewController.swift in Sources */,
+				2CBC584F20A4D0AB00C718F6 /* CoinViewController.swift in Sources */,
+				2CE3A32120A4988700F246AC /* EnterNameViewController.swift in Sources */,
 				2CE3A31F20A4988700F246AC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,15 +365,13 @@
 		};
 		2CE3A32E20A4988900F246AC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A50DE71BBCE381C28D5D26C /* Pods-luna.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5UVZRKV28W;
 				INFOPLIST_FILE = luna/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.brandanmcdevitt.luna;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -296,15 +381,13 @@
 		};
 		2CE3A32F20A4988900F246AC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 323DA455E3CACEA3EFF591D8 /* Pods-luna.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5UVZRKV28W;
 				INFOPLIST_FILE = luna/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.brandanmcdevitt.luna;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
