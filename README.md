@@ -3,8 +3,8 @@
 #### Mobile app to check current prices of crypto currency coins
 
 - [ ] Style second view
-- [ ] Contrain layouts
-- [ ] Add more currencies to picker
+- [ ] Constrain layouts
+- [x] Add more currencies to picker
 - [ ] Fix refresh button for initial currency
 - [ ] Add ability for user to store their currency for next session
-- [ ] Add ability for user to input number of each coin they have
+- [x] Add ability for user to input number of each coin they have
