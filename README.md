@@ -1,6 +1,6 @@
 <img src="https://github.com/brandanmcdevitt/luna/blob/master/luna/Assets.xcassets/logo-dark.imageset/logo-dark.png" width=200>
 
-#### Mobile app to check current prices of crypto currency coins
+#### iOS application to keep up to date with crypto currency information
 
 - [ ] Style second view
 - [ ] Constrain layouts
