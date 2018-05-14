@@ -9,3 +9,4 @@
 - [ ] Add ability for user to store their currency for next session
 - [x] Add ability for user to input number of each coin they have
 - [x] Change textfield to only display numerical keyboard input
+- [ ] Add pull down to refresh
