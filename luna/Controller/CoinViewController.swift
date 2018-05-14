@@ -47,6 +47,7 @@ class CoinViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         
         tvHoldingInput.placeholder = coinPassedFromPrevious!
         lblHoldingWorth.isHidden = true
+        tvHoldingInput.keyboardType = .decimalPad
         
         priceUrl = "https://min-api.cryptocompare.com/data/pricemultifull?fsyms=\(coinPassedFromPrevious!)&tsyms=\(currencyChoice)"
         
