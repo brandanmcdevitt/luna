@@ -14,6 +14,7 @@ class EnterNameViewController: UIViewController, UIPickerViewDataSource, UIPicke
 
     
     @IBOutlet weak var tvCoin: UITextField!
+    @IBOutlet weak var btnSubmit: UIButton!
     
     let myPicker = UIPickerView()
     var coinArray : [String] = []
@@ -34,6 +35,10 @@ class EnterNameViewController: UIViewController, UIPickerViewDataSource, UIPicke
         tvCoin.inputView = myPicker
         
         getCoinList(url: baseUrl)
+       
+        if tvCoin.text == "" {
+             btnSubmit.isEnabled = false
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -118,6 +123,7 @@ class EnterNameViewController: UIViewController, UIPickerViewDataSource, UIPicke
         
         tvCoin.text = chosenCoin
         finalImageUrl = baseImageUrl + testDict[chosenCoin]!
+        btnSubmit.isEnabled = true
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
