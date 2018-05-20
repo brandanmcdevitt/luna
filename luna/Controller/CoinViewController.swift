@@ -118,6 +118,7 @@ class CoinViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         }
     }
     
+    //getting the price of the selected coin and currency
     func getPrice(url: String) {
         
         Alamofire.request(url, method: .get)
@@ -128,6 +129,7 @@ class CoinViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
                     let priceJSON : JSON = JSON(response.result.value!)
                     print(priceJSON)
                     
+                    //update ui elements when data is pulled
                     self.updatePrice(json: priceJSON)
                     
                 } else {
