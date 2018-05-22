@@ -2,6 +2,7 @@
 
 #### iOS application to keep up to date with crypto currency information
 
+##### TODO
 - [x] Style second view
 - [x] Constrain layouts
 - [x] Add more currencies to picker
