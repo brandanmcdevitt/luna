@@ -1,4 +1,6 @@
-<img src="https://github.com/brandanmcdevitt/luna/blob/master/luna/Assets.xcassets/logo-dark.imageset/logo-dark.png" width=200>
+<img src="https://github.com/brandanmcdevitt/luna/blob/master/luna.png">
+
+<img src="https://github.com/brandanmcdevitt/luna/blob/master/luna/Assets.xcassets/logo-dark.imageset/logo-dark.png" width=100>
 
 #### iOS application to keep up to date with crypto currency information
 
