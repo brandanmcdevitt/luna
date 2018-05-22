@@ -2,8 +2,8 @@
 
 #### iOS application to keep up to date with crypto currency information
 
-- [ ] Style second view
-- [ ] Constrain layouts
+- [x] Style second view
+- [x] Constrain layouts
 - [x] Add more currencies to picker
 - [ ] Fix refresh button for initial currency
 - [ ] Add ability for user to store their currency for next session
