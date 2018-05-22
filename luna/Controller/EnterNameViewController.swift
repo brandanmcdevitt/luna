@@ -127,11 +127,7 @@ class EnterNameViewController: UIViewController, UIPickerViewDataSource, UIPicke
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        // Check that the touched view is your background view
-        if touches.first?.view == self.view {
-            // Do What Every You want to do
-            self.view.endEditing(true)
-        }
+        self.view.endEditing(true)
     }
     
 }

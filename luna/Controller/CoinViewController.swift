@@ -37,6 +37,7 @@ class CoinViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     @IBOutlet weak var lblMktCap: UILabel!
     @IBOutlet weak var tvHoldingInput: UITextField!
     @IBOutlet weak var lblHoldingWorth: UILabel!
+    @IBOutlet weak var btnCalculate: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,12 +79,15 @@ class CoinViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     }
     
     @IBAction func holdingSubmitPressed(_ sender: Any) {
+        
+        if tvHoldingInput.text != "" {
         let holding: Double = Double(tvHoldingInput.text!)!
         let holdingBeforeFormat = holding * rawPrice
         let holdingFormatted = Double(round(100*holdingBeforeFormat)/100)
         
         lblHoldingWorth.isHidden = false
         lblHoldingWorth.text = ("Your \(holding) of \(coinPassedFromPrevious!) is worth \(currencyWithSymbol[currencyChoice]!) \(holdingFormatted)")
+        }
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
