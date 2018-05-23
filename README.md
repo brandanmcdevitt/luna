@@ -11,7 +11,3 @@
 - [x] Add ability for user to input number of each coin they have
 - [x] Change textfield to only display numerical keyboard input
 - [ ] Add pull down to refresh
-
-
-
-<img src="https://github.com/brandanmcdevitt/luna/blob/master/luna/Assets.xcassets/logo-dark.imageset/logo-dark.png" width=100>
