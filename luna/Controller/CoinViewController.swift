@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class CoinViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class CoinViewController: UIViewController{
 
     var coinPassedFromPrevious: String?
     var imagePassedFromPrevious: String?
@@ -90,29 +90,7 @@ class CoinViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         }
     }
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return currency.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return currency[row]
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let chosenCurrency = currency[row]
-        currencyChoice = chosenCurrency
-        tvCurrency.text = "\(chosenCurrency) ⌄"
-        
-        let baseUrlChange = "https://min-api.cryptocompare.com/data/pricemultifull?fsyms=\(coinPassedFromPrevious!)&tsyms="
-
-        currencyChange = baseUrlChange + currencyChoice
-        
-        getPrice(url: currencyChange)
-    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         // Check that the touched view is your background view
@@ -158,4 +136,30 @@ class CoinViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         lblMktCap.text = marketCap!
     }
 
+}
+//MARK: - UIPickerView Methods
+extension CoinViewController : UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return currency.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return currency[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let chosenCurrency = currency[row]
+        currencyChoice = chosenCurrency
+        tvCurrency.text = "\(chosenCurrency) ⌄"
+        
+        let baseUrlChange = "https://min-api.cryptocompare.com/data/pricemultifull?fsyms=\(coinPassedFromPrevious!)&tsyms="
+        
+        currencyChange = baseUrlChange + currencyChoice
+        
+        getPrice(url: currencyChange)
+    }
 }

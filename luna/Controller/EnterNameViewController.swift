@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class EnterNameViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class EnterNameViewController: UIViewController {
 
     
     @IBOutlet weak var tvCoin: UITextField!
@@ -62,10 +62,7 @@ class EnterNameViewController: UIViewController, UIPickerViewDataSource, UIPicke
         }
     }
     
-    //
-    //    //MARK: - Networking
-    //    /***************************************************************/
-    //
+    //MARK: - Networking
     func getCoinList(url: String) {
         
         Alamofire.request(url, method: .get)
@@ -86,9 +83,7 @@ class EnterNameViewController: UIViewController, UIPickerViewDataSource, UIPicke
         
     }
     
-    //    //MARK: - JSON Parsing
-    //    /***************************************************************/
-    //
+    //MARK: - JSON Parsing
     func updateCoins(json : JSON) {
         
         for (_, value) in json["Data"] {
@@ -106,6 +101,15 @@ class EnterNameViewController: UIViewController, UIPickerViewDataSource, UIPicke
         }
     }
     
+    
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+}
+//MARK: - UIPickerView Methodss
+extension EnterNameViewController : UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -125,11 +129,5 @@ class EnterNameViewController: UIViewController, UIPickerViewDataSource, UIPicke
         finalImageUrl = baseImageUrl + testDict[chosenCoin]!
         btnSubmit.isEnabled = true
     }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
-    
 }
-
 
