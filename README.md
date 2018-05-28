@@ -1,7 +1,8 @@
-<img src="https://github.com/brandanmcdevitt/luna/blob/master/luna/Assets.xcassets/logo-dark.imageset/logo-dark.png" width=200>
+<img src="https://github.com/brandanmcdevitt/luna/blob/master/luna.png">
 
 #### iOS application to keep up to date with crypto currency information
 
+##### TODO
 - [x] Style second view
 - [x] Constrain layouts
 - [x] Add more currencies to picker
@@ -10,3 +11,4 @@
 - [x] Add ability for user to input number of each coin they have
 - [x] Change textfield to only display numerical keyboard input
 - [ ] Add pull down to refresh
+- [ ] Refactor code for better readability
