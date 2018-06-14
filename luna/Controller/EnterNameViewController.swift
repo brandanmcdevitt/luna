@@ -20,11 +20,11 @@ class EnterNameViewController: UIViewController {
     var coinArray : [String] = []
     
     var testDict: [String: String] = [:]
-    var pageNo : Int = 0
+    var pageNo = 0
     
-    var baseUrl: String = ""
-    var baseImageUrl: String = "https://www.cryptocompare.com"
-    var finalImageUrl: String = ""
+    var baseUrl = ""
+    var baseImageUrl = "https://www.cryptocompare.com"
+    var finalImageUrl = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
